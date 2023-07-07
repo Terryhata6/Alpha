@@ -2,7 +2,7 @@ using Rewired;
 using UnityEngine;
 using Zenject;
 
-namespace CoreScripts.Services.DI
+namespace AlphaSource.Services.DI
 {
     public class BootstrapInstaller : MonoInstaller
     {

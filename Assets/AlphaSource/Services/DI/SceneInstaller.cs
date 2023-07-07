@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-using Zenject;
+﻿using Zenject;
 
-namespace CoreScripts.Services.DI
+namespace AlphaSource.Services.DI
 {
     public class SceneInstaller : MonoInstaller
     {
