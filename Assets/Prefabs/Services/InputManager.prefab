@@ -173,7 +173,7 @@ MonoBehaviour:
         exportConsts_layouts: 1
         exportConsts_layoutsClassName: Layout
         exportConsts_players: 1
-        exportConsts_playersClassName: Player
+        exportConsts_playersClassName: RewiredPlayer
         exportConsts_inputBehaviors: 0
         exportConsts_inputBehaviorsClassName: InputBehavior
         exportConsts_customControllers: 1
@@ -235,9 +235,9 @@ MonoBehaviour:
         _ruleSets: []
     actions:
     - _id: 0
-      _name: HorisontalAxis
+      _name: HorizontalAxis
       _type: 0
-      _descriptiveName: Horisontal Axis
+      _descriptiveName: Horizontal Axis
       _positiveDescriptiveName: Right
       _negativeDescriptiveName: Left
       _behaviorId: 0
@@ -262,18 +262,9 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 0
     - _id: 3
-      _name: AttackDown
+      _name: Attack
       _type: 1
-      _descriptiveName: Attack button Down
-      _positiveDescriptiveName: 
-      _negativeDescriptiveName: 
-      _behaviorId: 0
-      _userAssignable: 1
-      _categoryId: 0
-    - _id: 4
-      _name: AttackUp
-      _type: 1
-      _descriptiveName: Attack button up
+      _descriptiveName: Attack button
       _positiveDescriptiveName: 
       _negativeDescriptiveName: 
       _behaviorId: 0
@@ -288,7 +279,7 @@ MonoBehaviour:
     actionCategoryMap:
       list:
       - categoryId: 0
-        actionIds: 0000000001000000020000000300000004000000
+        actionIds: 00000000010000000200000003000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -461,7 +452,7 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
-        _actionId: 4
+        _actionId: 3
         _elementType: 1
         _elementIdentifierId: 3
         _axisRange: 0

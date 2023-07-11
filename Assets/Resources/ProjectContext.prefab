@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputManager: {fileID: 8123061294814689184, guid: d2b2eb37e38651f4a9a6a2f4f46b69ea,
     type: 3}
+  _updateRunner: {fileID: 3814183943277151062, guid: 302bf7eebff5514428118cec443f47e4,
+    type: 3}
 --- !u!114 &5600069351769527215
 MonoBehaviour:
   m_ObjectHideFlags: 0
