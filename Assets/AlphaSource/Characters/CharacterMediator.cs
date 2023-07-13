@@ -8,9 +8,8 @@ namespace AlphaSource.Characters
     public class CharacterMediator : MonoBehaviour
     {
         public string ID { get; private set; }
-        private InputManager _inputManager;
         private MovementMediator _movementMediator;
-
+        private SkillsMediator _skillsMediator;
         
 
         public void Init(string id,  UpdateRunner runner, Player inputPlayer)

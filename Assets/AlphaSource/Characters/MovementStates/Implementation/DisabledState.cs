@@ -2,10 +2,25 @@
 
 namespace AlphaSource.Characters.MovementStates.Implementation
 {
-    public class DisabledState : BaseState
+    public class DisabledState : IMovementState
     {
-        public DisabledState(MovementMediator movementMediator, Player playerInput) : base(movementMediator, playerInput)
+        public DisabledState()
         {
+        }
+
+        public void Enter(MovementStateType previousState)
+        {
+            
+        }
+
+        public void Exit()
+        {
+            
+        }
+
+        public void ExecuteState()
+        {
+            
         }
     }
 }

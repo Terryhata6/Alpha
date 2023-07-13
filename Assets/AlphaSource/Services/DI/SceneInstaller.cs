@@ -17,6 +17,11 @@ namespace AlphaSource.Services.DI
         
         public override void InstallBindings()
         {
+            BindCharacterFabric();
+        }
+
+        private void BindCharacterFabric()
+        {
             Container.Bind<CharacterFabric>().FromInstance(_characterFabricInstance).AsSingle().NonLazy();
         }
     }

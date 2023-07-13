@@ -4,6 +4,7 @@
     {
         Disabled,
         Idle,
-        SimpleMoving
+        SimpleMoving,
+        ForcedMoving
     }
 }
