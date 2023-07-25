@@ -1,3 +1,4 @@
+using AlphaSource.Services.UI;
 using AlphaSource.Services.Updater;
 using Rewired;
 using UnityEngine;
@@ -9,12 +10,19 @@ namespace AlphaSource.Services.DI
     {
         [Header("Prefabs")] 
         [SerializeField] private InputManager _inputManager;
-        [SerializeField] private UpdateRunner _updateRunner; 
-        
+        [SerializeField] private UpdateRunner _updateRunner;
+        [SerializeField] private UIMediator _uiMediator;
         public override void InstallBindings()
         {
             BindInputManager();
             BindRunner();
+            BindUI();
+        }
+
+        private void BindUI()
+        {
+            var uiMediator = Instantiate(_uiMediator, transform);
+            Container.Bind<UIMediator>().FromInstance(uiMediator).AsSingle().NonLazy();
         }
 
         private void BindRunner()

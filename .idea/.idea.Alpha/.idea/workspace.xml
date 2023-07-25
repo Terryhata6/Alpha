@@ -15,10 +15,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2c7f23a1ebc34c9a896f1217e48bd2921da400/92/8fdca847/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/7e/ec4312ad/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ba783288ca164d3099898a8819fcec1c159e00/3f/5e4d784e/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ba783288ca164d3099898a8819fcec1c159e00/f8/22624c04/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Characters/CharacterMediator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/DI/BootstrapInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/Updater/Interfaces/IFixedUpdatable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/Updater/Interfaces/IUpdatable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../BankingTowerDefence/Assets/CoreScripts/Infrastructure/PlayerSpace/PlayerAnimator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../BankingTowerDefence/Assets/CoreScripts/Infrastructure/PlayerSpace/PlayerChangeWeapon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../BankingTowerDefence/Assets/CoreScripts/Infrastructure/PlayerSpace/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../BankingTowerDefence/Assets/CoreScripts/Infrastructure/PlayerSpace/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../BankingTowerDefence/Assets/CoreScripts/Infrastructure/PlayerSpace/PlayerShooting.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../BankingTowerDefence/Assets/CoreScripts/Infrastructure/PlayerSpace/PlayerWeaponAim.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -98,6 +105,10 @@
       <workItem from="1689269709285" duration="27000" />
       <workItem from="1689276276895" duration="8014000" />
       <workItem from="1689330680029" duration="1919000" />
+      <workItem from="1689529596236" duration="3400000" />
+      <workItem from="1690153056658" duration="3818000" />
+      <workItem from="1690219420628" duration="5286000" />
+      <workItem from="1690312877299" duration="10997000" />
     </task>
     <servers />
   </component>

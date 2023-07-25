@@ -10,14 +10,35 @@ namespace AlphaSource.Characters
         public string ID { get; private set; }
         private MovementMediator _movementMediator;
         private SkillsMediator _skillsMediator;
-        
+        private ICharacterAnimator _characterAnimator;
+        private CharacterCurrentData _currentData;
 
         public void Init(string id,  UpdateRunner runner, Player inputPlayer)
         {
-            BindMovement(id, runner, inputPlayer);
+            _currentData = new CharacterCurrentData();
+            BindAnimator();
+            BindMovement(id, runner, inputPlayer, _characterAnimator, _currentData);
         }
 
-        private void BindMovement(string id, UpdateRunner runner, Player inputPlayer)
+        private void BindAnimator()
+        {
+            if (_characterAnimator == null)
+            {
+                if (TryGetComponent(out _characterAnimator))
+                {
+                    
+                }
+                else
+                {
+                    _characterAnimator = gameObject.AddComponent<CharacterAnimator>();
+                }
+            }
+
+            _characterAnimator.Init();
+        }
+        
+        private void BindMovement(string id, UpdateRunner runner, Player inputPlayer,
+            ICharacterAnimator characterAnimator, CharacterCurrentData characterCurrentData)
         {
             if (_movementMediator == null)
             {
@@ -31,7 +52,19 @@ namespace AlphaSource.Characters
                 }
             }
             
-            _movementMediator.Init(runner, inputPlayer);
+            _movementMediator.Init(runner, inputPlayer, characterAnimator, characterCurrentData);
         }
+    }
+
+    public class CharacterCurrentData
+    {
+        public Vector3 WorldMousePointerData;
+        
+        public CharacterCurrentData()
+        {
+            
+        }
+        
+        
     }
 }

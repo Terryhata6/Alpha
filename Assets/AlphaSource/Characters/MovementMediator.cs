@@ -6,6 +6,7 @@ using AlphaSource.Characters.MovementStates.Implementation;
 using AlphaSource.Services.Updater;
 using AlphaSource.Services.Updater.Interfaces;
 using Rewired;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace AlphaSource.Characters
@@ -16,8 +17,11 @@ namespace AlphaSource.Characters
 
         private UpdateRunner _runner;
         private Player _playerInput;
+        private CharacterCurrentData _characterCurrentData;
+
 
         #endregion
+
         #region StateHandling
 
         private Dictionary<MovementStateType, IMovementState> _states;
@@ -25,28 +29,31 @@ namespace AlphaSource.Characters
         private BaseForcedMovementRule _currentBaseForcedRule;
 
         #endregion
+
         #region Values
 
         private Vector3 _currentMovementDirection = Vector3.zero;
         private float _baseSpeedLimit = 10f;
         private float _currentSpeed = 1f;
+        private ICharacterAnimator _characterAnimator;
 
 
         public Vector3 Direction => _currentMovementDirection;
         #endregion
 
-        public void Init(UpdateRunner runner, Player inputPlayer)
+        public void Init(UpdateRunner runner, Player inputPlayer, ICharacterAnimator characterAnimator,
+            CharacterCurrentData characterCurrentData)
         {
+            _characterCurrentData = characterCurrentData;
+            _characterAnimator = characterAnimator;
             _runner = runner;
             _runner.Subscribe(this);
             BindInput(inputPlayer);
             
             InitMovementStates();
         }
-        private void BindInput(Player inputPlayer)
-        {
-            _playerInput = inputPlayer;
-        }
+        private void BindInput(Player inputPlayer) => _playerInput = inputPlayer;
+
         private void InitMovementStates()
         {
             _states = new Dictionary<MovementStateType, IMovementState>();
@@ -82,9 +89,27 @@ namespace AlphaSource.Characters
                 _runner.Unsubscribe(this);
             }
         }
+
+        public void RotateCharacter(Vector3 rotationDirection)
+        {
+            transform.rotation = quaternion.LookRotationSafe(rotationDirection ,Vector3.up);
+        }
+        
         public void Move()
         {
-            transform.Translate(Direction * _currentSpeed);
+            var speed = _currentMovementDirection.magnitude;
+            
+            transform.position += _currentMovementDirection * _currentSpeed * Time.deltaTime;
+
+            //var lookDirection = _currentMovementDirection;
+            var lookDirection = Vector3.right;
+            
+            RotateCharacter(lookDirection);
+
+            Quaternion rotation = Quaternion.Inverse(Quaternion.FromToRotation(Vector3.forward, lookDirection));
+            Vector3 relativeMoveDirection = rotation * _currentMovementDirection; 
+            
+            _characterAnimator.Move(relativeMoveDirection.normalized, speed);
         }
         public void ExecuteCurrentForcedMovement(Action onForcedMovementEndCallback)
         {
