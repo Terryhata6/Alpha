@@ -1,3 +1,5 @@
+using AlphaSource.PlayerDirectory;
+using AlphaSource.Services.SaveLoad;
 using AlphaSource.Services.UI;
 using AlphaSource.Services.Updater;
 using Rewired;
@@ -14,9 +16,24 @@ namespace AlphaSource.Services.DI
         [SerializeField] private UIMediator _uiMediator;
         public override void InstallBindings()
         {
+            var saveLoad = BindSaveLoad();
             BindInputManager();
             BindRunner();
             BindUI();
+            BindPlayerManager(saveLoad);
+        }
+
+        private SaveLoadSystem BindSaveLoad()
+        {
+            var saveLoad = new SaveLoadSystem();
+            Container.Bind<SaveLoadSystem>().FromInstance(saveLoad).AsSingle().NonLazy();
+            return saveLoad;
+        }
+
+        private void BindPlayerManager(SaveLoadSystem saveLoadSystem)
+        {
+            var playerManager = new PlayerManager(saveLoadSystem);
+            Container.Bind<PlayerManager>().FromInstance(playerManager).AsSingle().NonLazy();
         }
 
         private void BindUI()

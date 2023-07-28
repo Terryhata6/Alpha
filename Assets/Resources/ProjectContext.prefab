@@ -49,6 +49,8 @@ MonoBehaviour:
     type: 3}
   _updateRunner: {fileID: 3814183943277151062, guid: 302bf7eebff5514428118cec443f47e4,
     type: 3}
+  _uiMediator: {fileID: 9104473844261823301, guid: e0b772a7e8cc4354991f1da4da73e073,
+    type: 3}
 --- !u!114 &5600069351769527215
 MonoBehaviour:
   m_ObjectHideFlags: 0

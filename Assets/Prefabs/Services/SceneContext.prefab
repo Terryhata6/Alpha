@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6f473c90e1445aa163b26af8675169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneRunner: {fileID: 0}
+  _characterFabricInstance: {fileID: 460341450406864724, guid: 1b58d5e9be7cb50469fe50ff72f7d214,
+    type: 3}
+  _sceneCameraManagerExample: {fileID: 4808710342820907291, guid: 8c8103607a794454c8943b3110e2fe2a,
+    type: 3}
 --- !u!114 &5403842065135538334
 MonoBehaviour:
   m_ObjectHideFlags: 0

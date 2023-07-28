@@ -1,7 +1,6 @@
 ﻿using Rewired;
-using UnityEngine;
 
-namespace AlphaSource.Characters.MovementStates.Implementation
+namespace AlphaSource.Characters.MovementStates
 {
     public class IdleState : BaseEnabledState
     {
@@ -18,9 +17,6 @@ namespace AlphaSource.Characters.MovementStates.Implementation
 
         private void CheckInput(InputActionEventData obj)
         {
-            Debug.Log("Unsub");
-            
-            
             _movementMediator.ChangeState(MovementStateType.SimpleMoving);
         }
 
@@ -33,7 +29,7 @@ namespace AlphaSource.Characters.MovementStates.Implementation
 
         public override void ExecuteState()
         {
-            Debug.Log("Idle");
+            
             
         }
     }

@@ -1,6 +1,4 @@
-﻿using Rewired;
-
-namespace AlphaSource.Characters.MovementStates.Implementation
+﻿namespace AlphaSource.Characters.MovementStates
 {
     public class DisabledState : IMovementState
     {

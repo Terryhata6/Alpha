@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using AlphaSource.Characters.MovementRules;
 using AlphaSource.Characters.MovementStates;
-using AlphaSource.Characters.MovementStates.Implementation;
 using AlphaSource.Services.Updater;
 using AlphaSource.Services.Updater.Interfaces;
 using Rewired;
@@ -11,11 +10,10 @@ using UnityEngine;
 
 namespace AlphaSource.Characters
 {
-    public class MovementMediator : MonoBehaviour, IUpdatable
+    public class MovementMediator : MonoBehaviour
     {
         #region Dependencies
 
-        private UpdateRunner _runner;
         private Player _playerInput;
         private CharacterCurrentData _characterCurrentData;
 
@@ -41,13 +39,12 @@ namespace AlphaSource.Characters
         public Vector3 Direction => _currentMovementDirection;
         #endregion
 
-        public void Init(UpdateRunner runner, Player inputPlayer, ICharacterAnimator characterAnimator,
+        public void Init(Player inputPlayer, ICharacterAnimator characterAnimator,
             CharacterCurrentData characterCurrentData)
         {
             _characterCurrentData = characterCurrentData;
             _characterAnimator = characterAnimator;
-            _runner = runner;
-            _runner.Subscribe(this);
+            
             BindInput(inputPlayer);
             
             InitMovementStates();
@@ -82,13 +79,7 @@ namespace AlphaSource.Characters
             _currentMovementDirection.z = _playerInput.GetAxis(RewiredConsts.Action.VerticalAxis);
             _currentMovementDirection.y = 0;
         }
-        public void OnDestroy()
-        {
-            if (_runner != null)
-            {
-                _runner.Unsubscribe(this);
-            }
-        }
+        
 
         public void RotateCharacter(Vector3 rotationDirection)
         {
@@ -101,8 +92,8 @@ namespace AlphaSource.Characters
             
             transform.position += _currentMovementDirection * _currentSpeed * Time.deltaTime;
 
-            //var lookDirection = _currentMovementDirection;
-            var lookDirection = Vector3.right;
+            var lookDirection = _currentMovementDirection;
+            //var lookDirection = Vector3.right;
             
             RotateCharacter(lookDirection);
 

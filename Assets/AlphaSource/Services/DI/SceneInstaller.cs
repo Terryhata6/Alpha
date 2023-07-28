@@ -1,6 +1,11 @@
-﻿using AlphaSource.Characters;
+﻿using System;
+using AlphaSource.Characters;
+using AlphaSource.PlayerDirectory;
 using AlphaSource.Services.Camera;
 using AlphaSource.Services.Damage;
+using AlphaSource.Services.SaveLoad;
+using AlphaSource.Services.Updater;
+using UnityEditor;
 using UnityEngine;
 using Zenject;
 
@@ -9,40 +14,68 @@ namespace AlphaSource.Services.DI
     public class SceneInstaller : MonoInstaller
     {
         [Header("Instances")][SerializeField]
-        private CharacterFabric _characterFabricInstance;
+        private SceneRunner _sceneRunner;
 
-        [Header("Examples")][SerializeField] 
-        private SceneCameraManager _sceneCameraManagerExample;
+        [Space][Header("Examples")]
+        [SerializeField] private CharacterFabric _characterFabricInstance;
+        [SerializeField] private SceneCameraManager _sceneCameraManagerExample;
         private DamageGlobalExecutor _damageGlobalExecutor;
         
+        
+        [Header("Dependencies")]
+        private PlayerManager _playerManager;
+        private SaveLoadSystem _saveLoad;
+        private UpdateRunner _updRunner;
+
         [Inject]
-        public void Construct()
+        public void Construct(UpdateRunner updRunner,PlayerManager playerManager, SaveLoadSystem saveLoad)
         {
-            
+            _updRunner = updRunner;
+            _saveLoad = saveLoad;
+            _playerManager = playerManager;
         }
+        
         
         public override void InstallBindings()
         {
-            BindCharacterFabric();
-            BindGlobalDamageExe();
-            BindCameraManagement();
+            var damageGlobalExecutor = BindGlobalDamageExecutor();
+            var cameraManager = BindCameraManagement();
+            var fabric = BindCharacterFabric(_updRunner, damageGlobalExecutor, cameraManager);
+            BindSceneRunner(fabric);
+
         }
 
-        private void BindCameraManagement()
+        private void BindSceneRunner(CharacterFabric fabric)
+        {
+            Container.Bind<SceneRunner>().FromInstance(_sceneRunner).AsSingle().NonLazy();
+            _sceneRunner.Init(_playerManager, fabric);
+        }
+        
+        private SceneCameraManager BindCameraManagement()
         {
             var cameraManager = Instantiate(_sceneCameraManagerExample, transform);
             Container.Bind<SceneCameraManager>().FromInstance(cameraManager).AsSingle().NonLazy();
+            return cameraManager;
         }
 
-        private void BindGlobalDamageExe()
+        private DamageGlobalExecutor BindGlobalDamageExecutor()
         {
-            Container.Bind<DamageGlobalExecutor>().FromInstance(new DamageGlobalExecutor()).AsSingle().NonLazy();
+            var damageGlobalExecutor = new DamageGlobalExecutor();
+            Container.Bind<DamageGlobalExecutor>().FromInstance(damageGlobalExecutor).AsSingle().NonLazy();
+            return damageGlobalExecutor;
         }
 
-        private void BindCharacterFabric()
+        private CharacterFabric BindCharacterFabric(UpdateRunner updateRunner,
+            DamageGlobalExecutor damageGlobalExecutor, SceneCameraManager sceneCameraManager)
         {
-            Container.Bind<CharacterFabric>().FromInstance(_characterFabricInstance).AsSingle().NonLazy();
-            
+            var fabric = Instantiate(_characterFabricInstance, transform);
+            Container.Bind<CharacterFabric>().FromInstance(fabric).AsSingle().NonLazy();
+            fabric.Init(updateRunner, damageGlobalExecutor, sceneCameraManager);
+            return fabric;
         }
+
+        
+        
+       
     }
 }

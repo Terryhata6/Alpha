@@ -10,27 +10,25 @@ namespace AlphaSource.Characters
 {
     public class CharacterFabric : MonoBehaviour
     {
-        [FormerlySerializedAs("Example")] [SerializeField] private CharacterMediator _example;
+        [SerializeField] private CharacterMediator _example;
         private UpdateRunner _runner;
         private DamageGlobalExecutor _damageGlobalExecutor;
         private SceneCameraManager _sceneCameraManager;
-        private string FirstPlayerID = "player0";
 
-        [Inject]
-        public void Construct(UpdateRunner runner, DamageGlobalExecutor damageGlobalExecutor, SceneCameraManager sceneCameraManager)
+        
+        public void Init(UpdateRunner runner, DamageGlobalExecutor damageGlobalExecutor, SceneCameraManager sceneCameraManager)
         {
             _sceneCameraManager = sceneCameraManager;
             _runner = runner;
             _damageGlobalExecutor = damageGlobalExecutor;
-
-            CreatePlayerCharacter(FirstPlayerID, transform, ReInput.players.GetPlayer(0));
         }
 
-        public CharacterMediator CreatePlayerCharacter(string id, Transform playerSpawner, Player inputPlayer)
+        public CharacterMediator CreatePlayerCharacter(Vector3 playerSpawnPosition, Player inputPlayer)
         {
-            var character = Instantiate(_example, playerSpawner.position, Quaternion.identity);
+            var character = Instantiate(_example, playerSpawnPosition, Quaternion.identity);
+            if(_sceneCameraManager)
             _sceneCameraManager.SetupCharacterCamera(character);
-            character.Init(id, _runner, inputPlayer);
+            character.Init(_runner, inputPlayer);
             return character;
         }
     }

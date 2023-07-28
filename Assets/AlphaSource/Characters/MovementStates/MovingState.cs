@@ -1,8 +1,7 @@
-﻿using System;
-using Rewired;
+﻿using Rewired;
 using UnityEngine;
 
-namespace AlphaSource.Characters.MovementStates.Implementation
+namespace AlphaSource.Characters.MovementStates
 {
     public class MovingState : BaseEnabledState
     {
@@ -30,12 +29,6 @@ namespace AlphaSource.Characters.MovementStates.Implementation
             {
                 _movementMediator.Move();
             }
-            else
-            {
-                
-            }
-            
-            Debug.Log("Moving");
         }
 
         
@@ -43,7 +36,7 @@ namespace AlphaSource.Characters.MovementStates.Implementation
         private bool ValidateDirection()
         {
             return true;
-            Vector3 currentPosition = _movementMediator.transform.position;
+            /*Vector3 currentPosition = _movementMediator.transform.position;
 
             // Проверяем, есть ли препятствия в текущем местоположении объекта
             if (Physics.Raycast(currentPosition, -Vector3.up, out RaycastHit groundHit, Mathf.Infinity))
@@ -83,6 +76,7 @@ namespace AlphaSource.Characters.MovementStates.Implementation
 
             // Если пройдены все проверки, возвращаем true
             return true;
+            */
         }
     }
 }

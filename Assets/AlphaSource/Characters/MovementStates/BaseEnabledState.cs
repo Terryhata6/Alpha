@@ -1,6 +1,6 @@
 ﻿using Rewired;
 
-namespace AlphaSource.Characters.MovementStates.Implementation
+namespace AlphaSource.Characters.MovementStates
 {
     public abstract class BaseEnabledState : IMovementState
     {
