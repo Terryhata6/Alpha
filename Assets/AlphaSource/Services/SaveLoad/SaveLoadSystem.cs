@@ -1,13 +1,15 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 namespace AlphaSource.Services.SaveLoad
 {
+    /*
+     * SaveLoad fukeirf
+     */
     public class SaveLoadSystem
     {
-        private PlayerSave _choosedCurrentSave;
+        private PlayerSave _chosenCurrentSave;
         
         public PlayerSave CreateNewSave(string name = "player")
         {
@@ -80,24 +82,13 @@ namespace AlphaSource.Services.SaveLoad
 
         public PlayerSave GetFirstPlayerInfo()
         {
-            if (_choosedCurrentSave == null)
+            if (_chosenCurrentSave == null)
             {
-                LoadSave(out _choosedCurrentSave);
+                LoadSave(out _chosenCurrentSave);
             }
-            return _choosedCurrentSave;
+            return _chosenCurrentSave;
         }
 
         
-    }
-
-    [Serializable]
-    public class PlayerSave
-    {
-        public PlayerSave(string name = "player")
-        {
-            Name = name;
-        }
-        
-        public string Name;
     }
 }

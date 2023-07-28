@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using AlphaSource.Characters;
+﻿using AlphaSource.Characters;
+using AlphaSource.PlayerDirectory;
 using UnityEngine;
-using Zenject;
 
-namespace AlphaSource.PlayerDirectory
+namespace AlphaSource.Services.SceneRunners
 {
-    
     /*
      * Этот класс отвечает за точку входа на сцену, инициализацию игроков и их размещение. Он должен осуществлять свою деятельность сразу после проброса всех зависимостей
      */
