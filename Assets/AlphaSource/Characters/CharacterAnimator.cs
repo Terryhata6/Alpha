@@ -4,9 +4,9 @@ namespace AlphaSource.Characters
 {
     public class CharacterAnimator : MonoBehaviour, ICharacterAnimator
     {
-        private int _movementDirectionX = Animator.StringToHash("movementDirectionX");
-        private int _movementDirectionZ = Animator.StringToHash("movementDirectionZ");
-        private int _movementSpeed = Animator.StringToHash("movementSpeed");
+        private readonly int _movementDirectionX = Animator.StringToHash("movementDirectionX");
+        private readonly int _movementDirectionZ = Animator.StringToHash("movementDirectionZ");
+        private readonly int _movementSpeed = Animator.StringToHash("movementSpeed");
 
         private Animator _animator;
 
