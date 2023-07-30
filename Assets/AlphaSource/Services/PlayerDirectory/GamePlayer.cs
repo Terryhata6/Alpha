@@ -1,7 +1,7 @@
 ﻿using AlphaSource.Characters;
 using Rewired;
 
-namespace AlphaSource.PlayerDirectory
+namespace AlphaSource.Services.PlayerDirectory
 {
     /*
      * Класс представляет собой хранилище Каждого отдельного игрока-человека, ссылки на его данные 

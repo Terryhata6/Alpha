@@ -17,8 +17,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ba783288ca164d3099898a8819fcec1c159e00/3f/5e4d784e/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ba783288ca164d3099898a8819fcec1c159e00/f8/22624c04/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Characters/CharacterMediator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/PlayerDirectory/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/DI/BootstrapInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/PlayerDirectory/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/SaveLoad/SaveLoadSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/Updater/Interfaces/IFixedUpdatable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlphaSource/Services/Updater/Interfaces/IUpdatable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../BankingTowerDefence/Assets/CoreScripts/Infrastructure/PlayerSpace/PlayerAnimator.cs" root0="SKIP_HIGHLIGHTING" />
@@ -114,7 +115,7 @@
       <workItem from="1690408063726" duration="10160000" />
       <workItem from="1690486663873" duration="14420000" />
       <workItem from="1690572423431" duration="2085000" />
-      <workItem from="1690746078136" duration="1593000" />
+      <workItem from="1690746078136" duration="2544000" />
     </task>
     <servers />
   </component>

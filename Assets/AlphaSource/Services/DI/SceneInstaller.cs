@@ -1,8 +1,8 @@
 ﻿using System;
 using AlphaSource.Characters;
-using AlphaSource.PlayerDirectory;
 using AlphaSource.Services.Camera;
 using AlphaSource.Services.Damage;
+using AlphaSource.Services.PlayerDirectory;
 using AlphaSource.Services.SaveLoad;
 using AlphaSource.Services.SceneRunners;
 using AlphaSource.Services.Updater;
@@ -25,11 +25,11 @@ namespace AlphaSource.Services.DI
         
         [Header("Dependencies")]
         private PlayerManager _playerManager;
-        private SaveLoadSystem _saveLoad;
+        private ISaveLoadSystem _saveLoad;
         private UpdateRunner _updRunner;
 
         [Inject]
-        public void Construct(UpdateRunner updRunner,PlayerManager playerManager, SaveLoadSystem saveLoad)
+        public void Construct(UpdateRunner updRunner,PlayerManager playerManager, ISaveLoadSystem saveLoad)
         {
             _updRunner = updRunner;
             _saveLoad = saveLoad;
