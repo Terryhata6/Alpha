@@ -11,7 +11,7 @@ namespace AlphaSource.Services.Camera
         [SerializeField] private CinemachineVirtualCamera _virtualCameraExample;
         public List<CameraIDPair> Cameras = new List<CameraIDPair>();
         
-        public void SetupCharacterCamera(CharacterMediator mediator)
+        public void SetupClientCamera(CharacterMediator mediator)
         {
             var camera = Instantiate(_virtualCameraExample, transform);
             camera.LookAt = mediator.transform;
