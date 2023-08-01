@@ -29,7 +29,7 @@ namespace AlphaSource.Characters.MovementRules
             ShiftSpeed = ShiftDistance / ShiftTime;
         }
 
-        public override void ExecuteMovementRule(MovementMediator onEndMovementCallback, Action OnEndMovementCallback)
+        public override void ExecuteMovementRule(MovementMediator targetMediator, Action onEndMovementCallback)
         {
             
         }

@@ -5,9 +5,15 @@ using UnityEngine;
 namespace AlphaSource.Services.SaveLoad
 {
     /*
-     * SaveLoad fukeirf
+     * SaveLoad временная заглушка
      */
-    public class SaveLoadSystem
+    public interface ISaveLoadSystem
+    {
+        bool LoadSave(out PlayerSave save, string name = "player");
+        PlayerSave GetFirstPlayerInfo();
+    }
+
+    public class SaveLoadSystem : ISaveLoadSystem
     {
         private PlayerSave _chosenCurrentSave;
         

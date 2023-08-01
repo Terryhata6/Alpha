@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using AlphaSource.Services.SaveLoad;
 using Rewired;
 
-namespace AlphaSource.PlayerDirectory
+namespace AlphaSource.Services.PlayerDirectory
 {
     public class PlayerManager
     {
         private Dictionary<string, GamePlayer> _gamePlayers;
-        private SaveLoadSystem _saveLoadSystem;
+        private ISaveLoadSystem _saveLoadSystem;
 
-        public PlayerManager(SaveLoadSystem saveLoadSystem)
+        public PlayerManager(ISaveLoadSystem saveLoadSystem)
         {
             _saveLoadSystem = saveLoadSystem;
             _gamePlayers = new Dictionary<string, GamePlayer>();

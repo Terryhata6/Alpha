@@ -1,5 +1,5 @@
 ﻿using AlphaSource.Characters;
-using AlphaSource.PlayerDirectory;
+using AlphaSource.Services.PlayerDirectory;
 using UnityEngine;
 
 namespace AlphaSource.Services.SceneRunners

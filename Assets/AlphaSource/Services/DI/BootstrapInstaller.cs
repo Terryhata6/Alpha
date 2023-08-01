@@ -1,4 +1,4 @@
-using AlphaSource.PlayerDirectory;
+using AlphaSource.Services.PlayerDirectory;
 using AlphaSource.Services.SaveLoad;
 using AlphaSource.Services.UI;
 using AlphaSource.Services.Updater;
@@ -23,14 +23,14 @@ namespace AlphaSource.Services.DI
             BindPlayerManager(saveLoad);
         }
 
-        private SaveLoadSystem BindSaveLoad()
+        private ISaveLoadSystem BindSaveLoad()
         {
             var saveLoad = new SaveLoadSystem();
-            Container.Bind<SaveLoadSystem>().FromInstance(saveLoad).AsSingle().NonLazy();
+            Container.Bind<ISaveLoadSystem>().FromInstance(saveLoad).AsSingle().NonLazy();
             return saveLoad;
         }
 
-        private void BindPlayerManager(SaveLoadSystem saveLoadSystem)
+        private void BindPlayerManager(ISaveLoadSystem saveLoadSystem)
         {
             var playerManager = new PlayerManager(saveLoadSystem);
             Container.Bind<PlayerManager>().FromInstance(playerManager).AsSingle().NonLazy();

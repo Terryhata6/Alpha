@@ -27,7 +27,7 @@ namespace AlphaSource.Characters
         {
             var character = Instantiate(_example, playerSpawnPosition, Quaternion.identity);
             if(_sceneCameraManager)
-            _sceneCameraManager.SetupCharacterCamera(character);
+            _sceneCameraManager.SetupClientCamera(character);
             character.Init(_runner, inputPlayer);
             return character;
         }
