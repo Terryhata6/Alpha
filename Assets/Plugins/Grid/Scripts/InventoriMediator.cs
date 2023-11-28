@@ -14,6 +14,7 @@ public class InventoriMediator : MonoBehaviour
             item.Init(this);
         }
     }
+    // to do розділить на два
     public void ActivationDeactivationTile(Vector2 tileCoordinates, bool actOrDeact, BoostBagMediator boostBagMediator)
     {
         GridManagers[0].ActivationDeactivationTile(tileCoordinates, actOrDeact,boostBagMediator);
