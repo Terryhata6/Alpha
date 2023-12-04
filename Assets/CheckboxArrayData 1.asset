@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62818ee1ba305ec4eb1abf74c0777828, type: 3}
-  m_Name: CheckboxArrayData
+  m_Name: CheckboxArrayData 1
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -26,70 +26,16 @@ MonoBehaviour:
       Data: 0|CheckboxArrayData+CheckboxState[,], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 30
+      Data: 49
     - Name: ranks
       Entry: 1
-      Data: 5|6
+      Data: 7|7
     - Name: 
       Entry: 7
       Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
     - Name: isChecked
       Entry: 5
       Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -134,70 +80,7 @@ MonoBehaviour:
       Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
     - Name: isChecked
       Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
       Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
-    - Name: isChecked
-      Entry: 5
-      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -269,6 +152,168 @@ MonoBehaviour:
       Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
     - Name: isChecked
       Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
       Data: true
     - Name: 
       Entry: 8
@@ -288,6 +333,132 @@ MonoBehaviour:
     - Name: isChecked
       Entry: 5
       Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: CheckboxArrayData+CheckboxState, Assembly-CSharp
+    - Name: isChecked
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -306,5 +477,5 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Width: 5
-  Height: 6
+  Width: 7
+  Height: 7

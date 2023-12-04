@@ -40,6 +40,7 @@ public class GrabbableObjectMediator : MonoBehaviour
     private CustomGrid _customGrid;
     private BoostBagMediator _boostBagMediator;
     private InventoriMediator _inventoriMediator;
+    private NeighborGrid _neighborGrid;
 
     private void Start()
     {
@@ -47,6 +48,8 @@ public class GrabbableObjectMediator : MonoBehaviour
         _customGrid = GetComponent<CustomGrid>();
         _boostBagMediator = GetComponent<BoostBagMediator>();
         _inventoriMediator = GetComponentInParent<InventoriMediator>();
+        _neighborGrid = GetComponentInParent<NeighborGrid>();
+
         _camera = Camera.main;
         _isGrabbing = false;
 
@@ -94,6 +97,8 @@ public class GrabbableObjectMediator : MonoBehaviour
                 _availableTilesCount = 0;
                 for (int i = 0; i < _collidedTiles.Count; i++)
                 {
+                    //_collidedTiles[i].GetComponentInChildren<SpriteRenderer>().color = Color.green;
+
                     if (_collidedTiles[i]._isEmpty && _collidedTiles[i].GetComponent<TowerTile>() != null)
                     {
                         _availableTilesCount++;
@@ -193,11 +198,14 @@ public class GrabbableObjectMediator : MonoBehaviour
             _collidedTiles[i].Disable += ResetObject;
             _collidedTiles[i].TileUse(this,_boostBagMediator);
             Vector2 cord = _collidedTiles[i].MyCoordinates();
-            if (min.x > cord.x || min.y > cord.y) min = cord;
-            if (max.x < cord.x || max.y < cord.y) max = cord;
+            Debug.Log(min + " / " + cord);
+
+            if (min.x > cord.x) min.x = cord.x;
+            if (min.y > cord.y) min.y = cord.y;
+            //if (max.x < cord.x || max.y < cord.y) max = cord;
         }
-        if(!_boostBagMediator) _inventoriMediator.SearchObBost(min, max, this);
-            Debug.Log(MediatorsNeighborObjects.Count);
+        if(_neighborGrid) _inventoriMediator.SearchObBost(min, _neighborGrid.checkboxArrayData, this);
+            Debug.Log(min);
         
         foreach (var item in MediatorsNeighborObjects)
         {
@@ -237,17 +245,20 @@ public class GrabbableObjectMediator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Tile>())
+        Tile tile = other.gameObject.GetComponent<Tile>();
+        if (tile|| !_collidedTiles.Contains(tile))
         {
-            _collidedTiles.Add(other.gameObject.GetComponent<Tile>());
+            _collidedTiles.Add(tile);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<Tile>())
+        Tile tile = other.gameObject.GetComponent<Tile>();
+
+        if (tile || _collidedTiles.Contains(tile))
         {
-            _collidedTiles.Remove(other.gameObject.GetComponent<Tile>());
+            _collidedTiles.Remove(tile);
         }
     }
 

@@ -1,11 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using UnityEditor;
 
 [CreateAssetMenu(fileName = "CheckboxArrayData", menuName = "ScriptableObjects/CheckboxArrayData", order = 1)]
 public class CheckboxArrayData : SerializedScriptableObject
 {
+    public int Width;
+    public int Height;
+
     [System.Serializable]
     public struct CheckboxState
     {
@@ -14,7 +16,13 @@ public class CheckboxArrayData : SerializedScriptableObject
     }
 
     [TableMatrix(DrawElementMethod = "DrawElement", HorizontalTitle = "Columns", VerticalTitle = "Rows")]
-    public CheckboxState[,] checkboxStates = new CheckboxState[7, 7];
+    public CheckboxState[,] checkboxStates;
+
+    public CheckboxArrayData()
+    {
+        // Initialize checkboxStates in the constructor
+        checkboxStates = new CheckboxState[Width, Height];
+    }
 
     private static CheckboxState DrawElement(Rect rect, CheckboxState value)
     {
@@ -24,7 +32,7 @@ public class CheckboxArrayData : SerializedScriptableObject
 
         if (EditorGUI.EndChangeCheck())
         {
-            // Если значение изменилось, выполните необходимые действия.
+            // If the value has changed, perform the necessary actions.
         }
 
         return value;
@@ -33,9 +41,9 @@ public class CheckboxArrayData : SerializedScriptableObject
     public Vector2Int[] GetCheckedCheckboxCoordinates()
     {
         int checkedCount = 0;
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < Width; i++)
         {
-            for (int j = 0; j < 7; j++)
+            for (int j = 0; j < Height; j++)
             {
                 if (checkboxStates[i, j].isChecked)
                 {
@@ -47,9 +55,9 @@ public class CheckboxArrayData : SerializedScriptableObject
         Vector2Int[] coordinates = new Vector2Int[checkedCount];
         int currentIndex = 0;
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < Width; i++)
         {
-            for (int j = 0; j < 7; j++)
+            for (int j = 0; j < Height; j++)
             {
                 if (checkboxStates[i, j].isChecked)
                 {
@@ -60,5 +68,11 @@ public class CheckboxArrayData : SerializedScriptableObject
         }
 
         return coordinates;
+    }
+
+    [Button("Update Table")]
+    private void UpdateTable()
+    {
+        checkboxStates = new CheckboxState[Width, Height];
     }
 }

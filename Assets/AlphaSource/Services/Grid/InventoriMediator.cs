@@ -19,9 +19,9 @@ public class InventoriMediator : MonoBehaviour
     {
         GridManagers[0].ActivationDeactivationTile(tileCoordinates, actOrDeact,boostBagMediator);
     }
-    public void SearchObBost(Vector2 min, Vector2 max, GrabbableObjectMediator  grabbableObjectMediators)
+    public void SearchObBost(Vector2 min, CheckboxArrayData checkboxArrayData, GrabbableObjectMediator  grabbableObjectMediators)
     {
-        GridManagers[0].SearchBostInTiles(min, max, grabbableObjectMediators);
+        GridManagers[0].SearchBostInTiles(min, checkboxArrayData, grabbableObjectMediators);
     }
 
 

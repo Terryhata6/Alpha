@@ -36,35 +36,33 @@ public class GridManager : MonoBehaviour
     {
         _databaseTile[Mathf.RoundToInt(tileCoordinates.x), Mathf.RoundToInt(tileCoordinates.y)].ActDeactMy(actOrDeact,boostBagMediator);
     }
-    public void SearchBostInTiles(Vector2 min, Vector2 max, GrabbableObjectMediator grabbableObjectMediators)
+    public void SearchBostInTiles(Vector2 min, CheckboxArrayData checkboxArrayData, GrabbableObjectMediator grabbableObjectMediators)
     {
-        Debug.Log(min + " / " + max + " / min" + 0);
 
-        int xMin = Mathf.Clamp(Mathf.RoundToInt(min.x) - 1, 0, Width-1);        
-        int xMax = Mathf.Clamp(Mathf.RoundToInt(max.x) + 1, 0, Width-1);
-        int yMin = Mathf.Clamp(Mathf.RoundToInt(min.y) - 1, 0, Height-1);
-        int yMax = Mathf.Clamp(Mathf.RoundToInt(max.y) + 1, 0, Height-1);
+        int xMin = (Mathf.RoundToInt(min.x)-1);        
+        int yMin = (Mathf.RoundToInt(min.y)-1);
 
-        for (int i = xMin; i <= xMax; i++)
+        for (int x = 0; x < checkboxArrayData.Width; x++)
         {
-            if (yMin != min.y) AddMediator(grabbableObjectMediators, i, yMin);
-            if (yMax != max.y) AddMediator(grabbableObjectMediators, i, yMax);
-        }  
-        for (int i = yMin; i <= yMax; i++)
-        {
-            if (xMin != min.x) AddMediator(grabbableObjectMediators, xMin,i );
-            if (xMax != max.x) AddMediator(grabbableObjectMediators, xMax,i );
+            for (int y = 0; y < checkboxArrayData.Height; y++)
+            {
+                if(checkboxArrayData.checkboxStates[x, y].isChecked) AddMediator(grabbableObjectMediators, x+xMin, y+yMin);
+            }
         }
     }
     public void AddMediator(GrabbableObjectMediator grabbableObjectMediator, int x,int y)
     {
         Debug.Log(x + " / "+ y + " / " + 0);
-        _databaseTile[x, y]._spriteRenderer.color = _databaseTile[x, y].RedColor;
-        GrabbableObjectMediator neighborGrabbable = _databaseTile[x, y].GrabbableObjectMediator;
-        if (neighborGrabbable)
+        if (x >= 0 && y >= 0 && x < Width && y < Height)
         {
-            neighborGrabbable.AddNeighborObjects(grabbableObjectMediator);
-            grabbableObjectMediator.AddNeighborObjects(neighborGrabbable);
+            _databaseTile[x, y]._spriteRenderer.color = _databaseTile[x, y].RedColor;
+            GrabbableObjectMediator neighborGrabbable = _databaseTile[x, y].GrabbableObjectMediator;
+            if (neighborGrabbable)
+            {
+                neighborGrabbable.AddNeighborObjects(grabbableObjectMediator);
+                grabbableObjectMediator.AddNeighborObjects(neighborGrabbable);
+            }
         }
+
     }
 }

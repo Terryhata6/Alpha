@@ -4,7 +4,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     //public Color BaseColor;
-    //public Color GreenColor;
+    public Color GreenColor;
     public Color RedColor;
     //public Color GrayColor;
     public bool OnChangeColor = false;
